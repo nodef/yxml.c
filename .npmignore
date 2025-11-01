@@ -1,0 +1,6 @@
+bench/
+test/
+Makefile
+yxml-gen.pl
+yxml-states
+yxml.c.in

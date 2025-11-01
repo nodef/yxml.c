@@ -2,19 +2,37 @@
 
 # Introduction
 
-Yxml is a small non-validating and mostly conforming XML parser written in C.
+Yxml is a small non-validating and mostly conforming XML parser written in C, by [Yorhel](https://yorhel.nl).
 
 The latest version of yxml and this document can be found on
 [https://dev.yorhel.nl/yxml](https://dev.yorhel.nl/yxml).
 
+# Installing yxml
+
+Run:
+```bash
+$ npm i yxml.c
+```
+
+And then include `yxml.h` as follows:
+```c
+#include "node_modules/yxml.c/yxml.h"
+```
+
+You may also want to include `yxml.c` as follows:
+```c
+#ifndef __YXML_C__
+#define __YXML_C__
+#include "node_modules/yxml.c/yxml.c"
+#endif
+```
+
+This will include both the function declaration and their definitions into a single file.
+
 # Compiling yxml
 
-Due to the small size of yxml, the recommended way to use it is to copy the
-[yxml.c](https://g.blicky.net/yxml.git/plain/yxml.c) and
-[yxml.h](https://g.blicky.net/yxml.git/plain/yxml.h) from the git repository
-into your project directory, and compile and link yxml.c as part of your
-program or library.
-
+Due to the small size of yxml, the recommended way to use it is to
+compile and link yxml.c as part of your program or library.
 The git repository also includes a Makefile. Running `make` without specifying
 a target will compile a `.a` file for easy static linking. A test suite is
 available under `make test`.
